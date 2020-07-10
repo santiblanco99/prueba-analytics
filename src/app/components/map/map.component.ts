@@ -58,7 +58,7 @@ export class MapComponent implements OnInit {
       });
       //save marker info
       this.commerceMarkers = mappedData;
-      console.log(this.commerceMarkers);
+      
 
       //build map with deafult center
       this.buildMap(this.commerceMarkers[3].geometry.coordinates);
@@ -75,7 +75,6 @@ export class MapComponent implements OnInit {
           .setLngLat(coordinates)
           .setPopup(new mapboxgl.Popup().setHTML(popupText))
           .addTo(this.map);
-        console.log(marker.getPopup());
       }
     }, err => {
       this.errorMessage = err;
