@@ -8,13 +8,17 @@ import { TitleComponent } from './components/title/title.component';
 import { MapComponent } from './components/map/map.component';
 import { ChartsModule } from 'ng2-charts';
 import { DonutSalesChartComponent } from './components/donut-sales-chart/donut-sales-chart.component';
+import { TableComponent } from './components/table/table.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
     MapComponent,
-    DonutSalesChartComponent
+    DonutSalesChartComponent,
+    TableComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
