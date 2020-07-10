@@ -44,7 +44,6 @@ export class MapComponent implements OnInit {
 
   commerceMarkers: Feature[];
 
-  errorMessage: string;
 
   ngOnInit(): void {
     //Load map marker data
@@ -62,6 +61,7 @@ export class MapComponent implements OnInit {
 
       //build map with deafult center
       this.buildMap(this.commerceMarkers[3].geometry.coordinates);
+      
 
       //add markers to map
       for (let i = 0; i < this.commerceMarkers.length; i++) {
@@ -76,8 +76,7 @@ export class MapComponent implements OnInit {
           .setPopup(new mapboxgl.Popup().setHTML(popupText))
           .addTo(this.map);
       }
-    }, err => {
-      this.errorMessage = err;
+      
     });
 
   }

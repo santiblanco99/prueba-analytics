@@ -10,6 +10,7 @@ import { ChartsModule } from 'ng2-charts';
 import { DonutSalesChartComponent } from './components/donut-sales-chart/donut-sales-chart.component';
 import { TableComponent } from './components/table/table.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { LineChartComponent } from './components/line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     MapComponent,
     DonutSalesChartComponent,
     TableComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    LineChartComponent
   ],
   imports: [
     BrowserModule,

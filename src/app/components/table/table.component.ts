@@ -11,20 +11,15 @@ export class TableComponent implements OnInit {
 
   @Input() commerceArray: Commerce[];
 
-  commerces: Commerce[];
   dataReady = false;
 
   constructor(private commerceService: CommerceService) { }
 
-  async ngOnInit(): Promise<void> {
-    console.log(this.commerceArray);
-    try {
-      let fetchedData = await this.commerceService.getCommerces().toPromise();
-      this.commerces = fetchedData;
-    } catch (error) {
-      
+  ngOnInit() {
+    if(this.commerceArray){
+      this.dataReady = true;
     }
-
+    
   }
 
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Label, SingleDataSet, monkeyPatchChartJsTooltip, monkeyPatchChartJsLegend } from 'ng2-charts';
 import { CommerceService } from 'src/app/services/commerce.service';
+import { Commerce } from 'src/app/models/Commerce';
 
 @Component({
   selector: 'app-donut-sales-chart',
@@ -10,8 +11,10 @@ import { CommerceService } from 'src/app/services/commerce.service';
 })
 export class DonutSalesChartComponent implements OnInit {
 
-   // Pie
-   public pieChartOptions: ChartOptions = {
+  @Input() commerceArray: Commerce[];
+
+  // Pie
+  public pieChartOptions: ChartOptions = {
     responsive: true,
   };
   public pieChartLabels: Label[] = [];
@@ -28,24 +31,20 @@ export class DonutSalesChartComponent implements OnInit {
 
   dataReady = false;
 
-  async ngOnInit() {
-    try {
-      let commerceData = await this.commerceService.getCommerces().toPromise();
+  ngOnInit() {
+    if (this.commerceArray) {
+      let commerceData = this.commerceArray;
       let salesData = [];
 
       //set labels and data
-      for(let i = 0; i< commerceData.length;i++){
+      for (let i = 0; i < commerceData.length; i++) {
         this.pieChartLabels[i] = commerceData[i].name;
         console.log(commerceData[i].sales)
         salesData[i] = commerceData[i].sales;
       }
       this.pieChartData = salesData;
       this.dataReady = true;
-
-    } catch (error) {
-      console.log(error);
-      
     }
-    
   }
+
 }

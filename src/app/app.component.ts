@@ -25,7 +25,7 @@ export class AppComponent {
   async ngOnInit(){
     try {
       this.commerceArray = await this.commerceService.getCommerces().toPromise();
-      // this.dataReady = true;
+      this.dataReady = true;
 
     } catch (error) {
       console.log(error);

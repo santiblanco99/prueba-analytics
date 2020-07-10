@@ -9,20 +9,24 @@
 <div *ngIf="dataReady">
     <app-title></app-title>
     <app-map></app-map>
-
+    <h2>All Commerces</h2>
+    <app-table [commerceArray]="commerceArray" ></app-table>
     <h2>Sales by Commerce</h2>
+    <br>
     <div class="row">
         <div class="col-sm-6">
-            <app-donut-sales-chart></app-donut-sales-chart>
+            <app-donut-sales-chart [commerceArray]="commerceArray"></app-donut-sales-chart>
         </div>
         <div class="col-sm-6">
-            <app-table [commerceArray]="commerceArray"></app-table>
+            <app-line-chart></app-line-chart>
         </div>
 
     </div>
 </div>
 
 <div *ngIf="!dataReady">
+    <app-title></app-title>
+    <br>
     <app-spinner width="7rem" height="7rem"></app-spinner>
       
 </div>

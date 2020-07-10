@@ -1,0 +1,20 @@
+<div *ngIf="dataReady">
+  <h4 class="text-muted">According to the <i>graph</i> API endpoint</h4>
+    <div style="display: block;">
+        <canvas baseChart
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins">
+        </canvas>
+      </div>
+</div>
+
+<div *ngIf="!dataReady">
+    <app-spinner></app-spinner>
+</div>
+
+
