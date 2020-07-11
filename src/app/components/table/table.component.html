@@ -1,10 +1,14 @@
-<div *ngIf="dataReady" class="container">
+<div *ngIf="dataReady">
   <table class="table table-hover table-bordered">
     <thead>
       <tr>
         <th scope="col">Name</th>
         <th scope="col">NIT</th>
         <th scope="col">Address</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Schedule</th>
+        <th scope="col">Days</th>
         <th scope="col">Accumulated Sales</th>
       </tr>
     </thead>
@@ -13,6 +17,10 @@
         <th scope="row">{{commerce.name}}</th>
         <td>{{commerce.nit}}</td>
         <td>{{commerce.address}}</td>
+        <td>{{commerce.phone}}</td>
+        <td>{{commerce.owner}}</td>
+        <td>{{commerce.schedule}}</td>
+        <td>{{commerce.days}}</td>
         <td>{{commerce.sales}}</td>
       </tr>
     </tbody>
@@ -20,5 +28,5 @@
 </div>
 
 <div *ngIf="!dataReady">
-<app-spinner></app-spinner>
+  <app-spinner></app-spinner>
 </div>

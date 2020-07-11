@@ -12,6 +12,7 @@ import { TableComponent } from './components/table/table.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,7 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
     DonutSalesChartComponent,
     TableComponent,
     SpinnerComponent,
-    BarChartComponent
+    BarChartComponent,
   ],
   imports: [
     BrowserModule,
