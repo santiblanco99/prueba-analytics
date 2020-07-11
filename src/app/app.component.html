@@ -1,34 +1,36 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<div *ngIf="dataReady">
+
+<div *ngIf="dataReady" class="container">
     <app-title></app-title>
+    <br>
     <app-map></app-map>
-    <h2>All Commerces</h2>
-    <app-table [commerceArray]="commerceArray" ></app-table>
+    <br>
+    <h2>Commerce Records</h2>
+    <br>
+    <br>
+    <app-table [commerceArray]="commerceArray"></app-table>
+    <br>
+    <br>
     <h2>Sales by Commerce</h2>
     <br>
-    <div class="row">
+    <br>
+
+    <div class="row graphs">
         <div class="col-sm-6">
             <app-donut-sales-chart [commerceArray]="commerceArray"></app-donut-sales-chart>
         </div>
         <div class="col-sm-6">
-            <app-line-chart></app-line-chart>
+            <app-bar-chart></app-bar-chart>
         </div>
 
     </div>
+
 </div>
 
 <div *ngIf="!dataReady">
     <app-title></app-title>
     <br>
     <app-spinner width="7rem" height="7rem"></app-spinner>
-      
+
 </div>
 
 

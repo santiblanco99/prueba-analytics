@@ -1,0 +1,14 @@
+<div style="display: block;" *ngIf="dataReady">
+    <h4 class="text-muted">According to the <i>/graph</i> API endpoint</h4>
+    <canvas baseChart 
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [plugins]="barChartPlugins"
+      [legend]="barChartLegend"
+      [chartType]="barChartType">
+    </canvas>
+  </div>
+  <div *ngIf="!dataReady">
+    <app-spinner></app-spinner>
+  </div>
