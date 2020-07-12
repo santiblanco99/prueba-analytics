@@ -1,36 +1,45 @@
+<div *ngIf="dataReady">
+    <div class="container">
 
-<div *ngIf="dataReady" class="container">
-    <app-title></app-title>
-    <br>
-    <app-map></app-map>
-    <br>
-    <br>
-    <h2><b>Sales by Commerce</b></h2>
-    <br>
-    <br>
-
-    <div class="row graphs">
-        <div class="col-sm-6">
-            <app-donut-sales-chart [commerceArray]="commerceArray"></app-donut-sales-chart>
-        </div>
-        <div class="col-sm-6">
-            <app-bar-chart></app-bar-chart>
+        <app-title></app-title>
+        <br>
+        <h2><b>Commerce Map</b></h2>
+        <br>
+        <div class="hideme">
+            <app-map></app-map>
         </div>
 
-    </div>
-    <hr>
-    <br>
-    <br>
-    <h2><b>Commerce Records</b></h2>
-    <br>
-    <br>
-    <div class="table">
-        <app-table [commerceArray]="commerceArray"></app-table>
-    </div>
-    
-    
+        <br>
+        <br>
+        <h2><b>Sales by Commerce</b></h2>
+        <br>
+        <br>
 
+        <div class="row graphs hideme">
+            <div class="col-sm-6">
+                <app-donut-sales-chart [commerceArray]="commerceArray"></app-donut-sales-chart>
+            </div>
+            <div class="col-sm-6">
+                <app-bar-chart></app-bar-chart>
+            </div>
+
+        </div>
+        <hr>
+        <br>
+        <br>
+        <h2><b>Commerce Records</b></h2>
+        <br>
+        <br>
+        <div class="table hideme">
+            <app-table [commerceArray]="commerceArray"></app-table>
+        </div>
+        
+
+    </div>
+        <app-footer></app-footer>
+    
 </div>
+
 
 <div *ngIf="!dataReady">
     <app-title></app-title>
@@ -38,6 +47,7 @@
     <app-spinner width="7rem" height="7rem"></app-spinner>
 
 </div>
+
 
 
 

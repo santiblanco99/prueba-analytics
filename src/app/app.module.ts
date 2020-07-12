@@ -11,6 +11,8 @@ import { DonutSalesChartComponent } from './components/donut-sales-chart/donut-s
 import { TableComponent } from './components/table/table.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
     TableComponent,
     SpinnerComponent,
     BarChartComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

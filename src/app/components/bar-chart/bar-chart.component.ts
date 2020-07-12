@@ -29,7 +29,7 @@ export class BarChartComponent implements OnInit {
 
   public barChartData: ChartDataSets[] = [
     { data: [], 
-      label: 'Commerce', 
+      label: 'Sales', 
       backgroundColor:'rgba(84,189,221,1)',
       hoverBackgroundColor: 'rgba(84,189,221,1)',
       borderColor: 'rgba(84,189,221,1)'

@@ -39,7 +39,6 @@ export class DonutSalesChartComponent implements OnInit {
       //set labels and data
       for (let i = 0; i < commerceData.length; i++) {
         this.pieChartLabels[i] = commerceData[i].name;
-        console.log(commerceData[i].sales)
         salesData[i] = commerceData[i].sales;
       }
       this.pieChartData = salesData;

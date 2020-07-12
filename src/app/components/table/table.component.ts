@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommerceService } from 'src/app/services/commerce.service';
 import { Commerce } from 'src/app/models/Commerce';
-import { element } from 'protractor';
 
 @Component({
   selector: 'app-table',

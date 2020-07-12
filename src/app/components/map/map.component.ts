@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl'
 import * as environment from '../../../environments/environment'
 import { CommerceService } from "../../services/commerce.service"
-import { Geometry } from 'src/app/models/Geometry';
-import { Commerce } from 'src/app/models/Commerce';
 import { Feature } from 'src/app/models/Feature';
 
 @Component({
@@ -96,10 +94,6 @@ export class MapComponent implements OnInit {
 
     });
 
-  }
-
-  prueba() {
-    console.log("hola");
   }
 
 
