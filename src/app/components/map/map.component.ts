@@ -84,7 +84,8 @@ export class MapComponent implements OnInit {
           .setLngLat(coordinates)
           .setPopup(new mapboxgl.Popup({closeOnClick: true}).setDOMContent(div)
           .on('close',()=>{
-            this.map.jumpTo({center:this.commerceMarkers[3].geometry.coordinates, zoom: this.zoom});
+            this.map.jumpTo({center:this.commerceMarkers[3].geometry.coordinates});
+            this.map.zoomTo(this.zoom);
           }))
           .addTo(this.map);
   
