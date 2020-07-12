@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommerceService } from 'src/app/services/commerce.service';
 import { Commerce } from 'src/app/models/Commerce';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-table',
@@ -16,9 +17,20 @@ export class TableComponent implements OnInit {
   constructor(private commerceService: CommerceService) { }
 
   ngOnInit() {
-    if(this.commerceArray){
+    if (this.commerceArray) {
       this.dataReady = true;
     }
+
+  }
+  scrollToElement(target: Commerce): void {
+    let id = target.name.split(" ");
+    let newId = `${id[0]}${id[1]}`;
+    let $element = <HTMLElement>document.querySelector(`#${newId}`);
+    
+    $element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    $element.click();
+    
+
     
   }
 

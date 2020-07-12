@@ -57,30 +57,49 @@ export class MapComponent implements OnInit {
       });
       //save marker info
       this.commerceMarkers = mappedData;
-      
+
 
       //build map with deafult center
       this.buildMap(this.commerceMarkers[3].geometry.coordinates);
-      
+
 
       //add markers to map
       for (let i = 0; i < this.commerceMarkers.length; i++) {
         let coordinates = this.commerceMarkers[i].geometry.coordinates;
         let info = this.commerceMarkers[i].properties;
 
+
+
         let popupText = info.name != undefined ? `<p><b>${info.name}</b><p>Address: ${info.address}
         </p><p>Schedule: ${info.schedule}</p><p>Contact #: ${info.phone}</p>` : "No info available"
 
+        let div = window.document.createElement("div");
+        let newId = info.name != undefined ? `${this.commerceMarkers[i].properties.name.split(" ")[0]}${this.commerceMarkers[i].properties.name.split(" ")[1]}` : null;
+  
+        div.innerHTML = popupText;
+
+        
+
         let marker = new mapboxgl.Marker()
           .setLngLat(coordinates)
-          .setPopup(new mapboxgl.Popup().setHTML(popupText))
+          .setPopup(new mapboxgl.Popup({closeOnClick: true}).setDOMContent(div)
+          .on('close',()=>{
+            this.map.jumpTo({center:this.commerceMarkers[3].geometry.coordinates, zoom: this.zoom});
+          }))
           .addTo(this.map);
+  
+
+         let markerElement: HTMLElement = marker.getElement();
+         markerElement.id = newId;
       }
-      
+
     });
 
   }
 
+  prueba() {
+    console.log("hola");
+  }
 
 
 }

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pruebaanalytics-26435": {
+      "hosting": {
+        "prueba-analytics": [
+          "pruebaanalytics-26435"
+        ]
+      }
+    }
+  }
+}
